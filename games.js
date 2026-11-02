@@ -60,14 +60,14 @@ window.GAMES = [
     "url": "https://hallowquest.vercel.app/"
   },
   {
-    "slug": "duelo-de-umbrales",
-    "titulo": "Duelo de Umbrales",
-    "descripcion": "Duelos tácticos 1 contra 1 por turnos.",
+    "slug": "el-impostor",
+    "titulo": "El Impostor",
+    "descripcion": "Todos conocen la palabra secreta… menos el impostor. Juego de fiesta para pasar el móvil, de 3 a 20 jugadores y con 6 modos.",
     "estado": "beta",
-    "generos": ["estrategia", "por turnos", "multijugador"],
+    "generos": ["fiesta", "grupo", "palabras"],
     "autores": [],
-    "emoji": "⚔️",
-    "colores": ["#0984e3", "#6c5ce7"],
-    "url": "https://duelodeumbrales.vercel.app/"
+    "emoji": "🕵️",
+    "colores": ["#6c5ce7", "#d63031"],
+    "url": "https://theimpostorgamer.vercel.app/"
   }
 ];

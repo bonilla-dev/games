@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuestros Juegos</title>
+  <meta name="description" content="Catálogo de todos los juegos que estamos creando.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Arcade casero</p>
+      <h1>Nuestros Juegos</h1>
+      <p class="lead">Todo lo que estamos creando, en un solo sitio. Elige uno y dale a jugar.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="toolbar" aria-label="Filtros">
+      <input id="search" type="search" placeholder="Buscar por nombre, género o autor…" autocomplete="off">
+      <div class="chips" id="status-filter" role="group" aria-label="Estado"></div>
+      <select id="sort" aria-label="Ordenar">
+        <option value="recent">Más recientes</option>
+        <option value="az">A → Z</option>
+      </select>
+    </section>
+
+    <div class="tags" id="tag-filter" role="group" aria-label="Géneros"></div>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+    <p class="empty" id="empty" hidden>No hay juegos que coincidan. ¿Toca crear uno?</p>
+
+    <section class="howto">
+      <h2>Añadir un juego nuevo</h2>
+      <ol>
+        <li>Ejecuta <code>node nuevo-juego.mjs "Nombre del juego"</code> en esta carpeta.</li>
+        <li>Se crea <code>games/nombre-del-juego/index.html</code> con una plantilla lista para programar.</li>
+        <li>Edita su ficha (descripción, género, estado…) en <code>games.js</code> y recarga esta página.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="wrap foot">Hecho con cariño y muchas partidas de prueba.</footer>
+
+  <dialog id="player" aria-label="Jugando">
+    <div class="player-bar">
+      <strong id="player-title"></strong>
+      <div class="player-actions">
+        <button type="button" id="btn-restart" title="Reiniciar">↻ Reiniciar</button>
+        <button type="button" id="btn-full" title="Pantalla completa">⛶ Pantalla completa</button>
+        <a id="btn-tab" target="_blank" rel="noopener">↗ Pestaña nueva</a>
+        <button type="button" id="btn-close" class="close" title="Cerrar (Esc)">✕</button>
+      </div>
+    </div>
+    <iframe id="frame" title="Juego" allow="fullscreen; gamepad; autoplay"></iframe>
+    <p class="controls" id="player-controls"></p>
+  </dialog>
+
+  <script src="games.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

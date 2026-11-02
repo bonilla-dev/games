@@ -81,7 +81,6 @@ games.push({
   estado,
   generos: genero ? genero.split(',').map((s) => s.trim()).filter(Boolean) : [],
   autores: autor ? [autor] : [],
-  fecha: new Date().toISOString().slice(0, 10),
   controles: 'Flechas o WASD',
   emoji: EMOJIS[n % EMOJIS.length],
   colores: PALETAS[n % PALETAS.length],

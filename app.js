@@ -7,7 +7,7 @@
     desarrollo: 'En desarrollo',
   };
 
-  const state = { q: '', status: 'todos', tag: null, sort: 'recent' };
+  const state = { q: '', status: 'todos', tag: null, sort: 'destacados' };
 
   const $ = (id) => document.getElementById(id);
   const grid = $('grid');
@@ -54,10 +54,9 @@
   }
 
   function renderGrid() {
-    const list = games.filter(matches).sort((a, b) =>
-      state.sort === 'az'
-        ? a.titulo.localeCompare(b.titulo, 'es')
-        : String(b.fecha || '').localeCompare(String(a.fecha || '')));
+    // "Destacados" respeta el orden de games.js
+    const list = games.filter(matches);
+    if (state.sort === 'az') list.sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
 
     grid.innerHTML = list.map((g) => {
       const [c1, c2] = g.colores || [];
@@ -76,9 +75,7 @@
             <p>${esc(g.descripcion)}</p>
             ${authors(g) ? `<p class="by">por ${esc(authors(g))}</p>` : ''}
             <div class="meta">
-              ${(g.generos || []).map((t) => `<span>#${esc(t)}</span>`).join('')}
-              ${g.fecha ? `<span>${esc(g.fecha)}</span>` : ''}
-            </div>
+              ${(g.generos || []).map((t) => `<span>#${esc(t)}</span>`).join('')}            </div>
             <button type="button" class="btn-play" data-play="${esc(g.slug)}">${g.iframe === false ? '↗ Jugar' : '▶ Jugar'}</button>
           </div>
         </article>`;

@@ -61,9 +61,11 @@ h1 {
 }
 .stat b { color: var(--text); }
 
-/* Buscador */
+/* Buscador y filtros */
 .toolbar {
   display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin: 32px 0 24px;
 }
 #search {
@@ -76,6 +78,18 @@ h1 {
   font: inherit;
 }
 #search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font: 500 14px Inter, sans-serif;
+  cursor: pointer;
+}
+.chip:hover { color: var(--text); border-color: var(--muted); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #1a1400; }
 
 /* Tarjetas */
 .grid {

@@ -7,7 +7,15 @@
     desarrollo: 'En desarrollo',
   };
 
-  const state = { q: '' };
+  // Filtros por tipo: cada uno agrupa juegos por su género en games.js
+  const TIPOS = [
+    ['fiesta', '🎉 Fiesta'],
+    ['multijugador', '📱 Multijugador'],
+    ['trivia', '❓ Preguntas'],
+    ['cartas', '🃏 Cartas'],
+  ];
+
+  const state = { q: '', tipo: null };
 
   const $ = (id) => document.getElementById(id);
   const grid = $('grid');
@@ -31,7 +39,15 @@
     ].join('');
   }
 
+  function renderTipos() {
+    const opts = [[null, 'Todos'], ...TIPOS.filter(([t]) => games.some((g) => (g.generos || []).includes(t)))];
+    $('tipos').innerHTML = opts
+      .map(([t, label]) => `<button type="button" class="chip" data-tipo="${t || ''}" aria-pressed="${state.tipo === t}">${label}</button>`)
+      .join('');
+  }
+
   function matches(g) {
+    if (state.tipo && !(g.generos || []).includes(state.tipo)) return false;
     if (!state.q) return true;
     const hay = [g.titulo, g.descripcion, authors(g), ...(g.generos || [])].join(' ').toLowerCase();
     return hay.includes(state.q);
@@ -69,6 +85,15 @@
 
   $('search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); renderGrid(); });
 
+  $('tipos').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-tipo]');
+    if (!b) return;
+    state.tipo = b.dataset.tipo || null;
+    renderTipos();
+    renderGrid();
+  });
+
   renderStats();
+  renderTipos();
   renderGrid();
 })();

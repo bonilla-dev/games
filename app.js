@@ -7,7 +7,7 @@
     desarrollo: 'En desarrollo',
   };
 
-  const state = { q: '', status: 'todos', tag: null, sort: 'destacados' };
+  const state = { q: '' };
 
   const $ = (id) => document.getElementById(id);
   const grid = $('grid');
@@ -31,30 +31,14 @@
     ].join('');
   }
 
-  function renderFilters() {
-    const statusOpts = [['todos', 'Todos'], ...Object.entries(STATUS)];
-    $('status-filter').innerHTML = statusOpts
-      .map(([k, label]) => `<button type="button" class="chip" data-status="${k}" aria-pressed="${state.status === k}">${label}</button>`)
-      .join('');
-
-    const tags = [...new Set(games.flatMap((g) => g.generos || []))].sort((a, b) => a.localeCompare(b, 'es'));
-    $('tag-filter').innerHTML = tags
-      .map((t) => `<button type="button" class="chip" data-tag="${esc(t)}" aria-pressed="${state.tag === t}">#${esc(t)}</button>`)
-      .join('');
-  }
-
   function matches(g) {
-    if (state.status !== 'todos' && g.estado !== state.status) return false;
-    if (state.tag && !(g.generos || []).includes(state.tag)) return false;
     if (!state.q) return true;
     const hay = [g.titulo, g.descripcion, authors(g), ...(g.generos || [])].join(' ').toLowerCase();
     return hay.includes(state.q);
   }
 
   function renderGrid() {
-    // "Destacados" respeta el orden de games.js
-    const list = games.filter(matches);
-    if (state.sort === 'az') list.sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
+    const list = games.filter(matches).sort((a, b) => a.titulo.localeCompare(b.titulo, 'es'));
 
     grid.innerHTML = list.map((g) => {
       const [c1, c2] = g.colores || [];
@@ -83,23 +67,8 @@
     empty.hidden = list.length > 0;
   }
 
-  function render() {
-    renderFilters();
-    renderGrid();
-  }
-
-  // Eventos de la página
-  document.addEventListener('click', (e) => {
-    const st = e.target.closest('[data-status]');
-    if (st) { state.status = st.dataset.status; return render(); }
-
-    const tag = e.target.closest('[data-tag]');
-    if (tag) { state.tag = state.tag === tag.dataset.tag ? null : tag.dataset.tag; return render(); }
-  });
-
   $('search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); renderGrid(); });
-  $('sort').addEventListener('change', (e) => { state.sort = e.target.value; renderGrid(); });
 
   renderStats();
-  render();
+  renderGrid();
 })();

@@ -13,7 +13,7 @@
 //   portada      ruta a una imagen, p. ej. "games/mi-juego/portada.png" (opcional)
 //   url          web del juego (si no está en games/<slug>/index.html)
 //
-// El orden de esta lista es el de "Destacados" en la web.
+// En la web se muestran ordenados por nombre.
 window.GAMES = [
   {
     "slug": "uno-3d",

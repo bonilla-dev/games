@@ -48,16 +48,9 @@
   </header>
 
   <main class="wrap">
-    <section class="toolbar" aria-label="Filtros">
-      <input id="search" type="search" placeholder="Buscar por nombre, género o autor…" autocomplete="off">
-      <div class="chips" id="status-filter" role="group" aria-label="Estado"></div>
-      <select id="sort" aria-label="Ordenar">
-        <option value="destacados">Destacados</option>
-        <option value="az">A → Z</option>
-      </select>
+    <section class="toolbar" aria-label="Buscar">
+      <input id="search" type="search" placeholder="Buscar por nombre, género o autor…" aria-label="Buscar juegos" autocomplete="off">
     </section>
-
-    <div class="tags" id="tag-filter" role="group" aria-label="Géneros"></div>
 
     <section class="grid" id="grid" aria-live="polite"></section>
     <p class="empty" id="empty" hidden>No hay juegos que coincidan.</p>

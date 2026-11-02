@@ -61,13 +61,10 @@ h1 {
 }
 .stat b { color: var(--text); }
 
-/* Filtros */
+/* Buscador */
 .toolbar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-  margin: 32px 0 12px;
+  margin: 32px 0 24px;
 }
 #search {
   flex: 1 1 260px;
@@ -78,30 +75,7 @@ h1 {
   padding: 12px 14px;
   font: inherit;
 }
-#search:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-select {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  color: var(--text);
-  border-radius: 10px;
-  padding: 11px 12px;
-  font: inherit;
-}
-.chips, .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags { margin-bottom: 24px; }
-.chip {
-  background: transparent;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  border-radius: 999px;
-  padding: 7px 14px;
-  font: 500 14px Inter, sans-serif;
-  cursor: pointer;
-}
-.chip:hover { color: var(--text); border-color: var(--muted); }
-.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #1a1400; }
-.tags .chip { font-size: 13px; padding: 4px 11px; }
-.tags .chip[aria-pressed="true"] { background: var(--accent-2); border-color: var(--accent-2); color: #fff; }
+#search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 /* Tarjetas */
 .grid {

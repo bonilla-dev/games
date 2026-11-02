@@ -18,9 +18,9 @@ window.GAMES = [
   {
     "slug": "uno-3d",
     "titulo": "UNO 3D",
-    "descripcion": "El clásico juego de cartas UNO, ahora en 3D. Quédate sin cartas antes que nadie.",
+    "descripcion": "El clásico UNO en 3D, ahora multijugador: cada uno en su móvil con un código de sala (hasta 10), pasando el móvil o contra bots.",
     "estado": "beta",
-    "generos": ["cartas", "3D"],
+    "generos": ["cartas", "3D", "multijugador"],
     "autores": [],
     "emoji": "🃏",
     "colores": ["#d63031", "#fdcb6e"],

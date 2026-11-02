@@ -13,6 +13,7 @@
     ['multijugador', '📱 Multijugador'],
     ['trivia', '❓ Preguntas'],
     ['cartas', '🃏 Cartas'],
+    ['puzle', '🧩 Puzles'],
   ];
 
   const state = { q: '', tipo: null };

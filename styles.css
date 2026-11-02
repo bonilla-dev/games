@@ -69,7 +69,6 @@ h1 {
   margin: 32px 0 24px;
 }
 #search {
-  flex: 1 1 260px;
   background: var(--bg-2);
   border: 1px solid var(--line);
   color: var(--text);

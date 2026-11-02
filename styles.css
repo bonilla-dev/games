@@ -27,14 +27,6 @@ body {
 
 .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
 
-code {
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 1px 6px;
-  font-size: .9em;
-}
-
 /* Cabecera */
 .hero {
   padding: 72px 0 40px;
@@ -189,17 +181,7 @@ select {
 
 .empty { text-align: center; color: var(--muted); padding: 48px 0; }
 
-.howto {
-  margin: 56px 0 24px;
-  padding: 24px;
-  background: var(--bg-2);
-  border: 1px dashed var(--line);
-  border-radius: var(--radius);
-}
-.howto h2 { margin: 0 0 8px; font-size: 18px; }
-.howto ol { margin: 0; padding-left: 20px; color: var(--muted); }
-.howto li { margin: 6px 0; }
-.foot { color: var(--muted); font-size: 13px; padding: 24px 0 40px; }
+.foot { color: var(--muted); font-size: 13px; padding: 56px 0 40px; }
 
 /* Reproductor */
 dialog#player {

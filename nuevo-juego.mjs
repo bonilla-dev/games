@@ -81,7 +81,6 @@ games.push({
   estado,
   generos: genero ? genero.split(',').map((s) => s.trim()).filter(Boolean) : [],
   autores: autor ? [autor] : [],
-  controles: 'Flechas o WASD',
   emoji: EMOJIS[n % EMOJIS.length],
   colores: PALETAS[n % PALETAS.length],
 });
@@ -92,4 +91,4 @@ const json = JSON.stringify(games, null, 2)
 writeFileSync(registry, src.slice(0, start) + MARKER + json + src.slice(end + 1));
 
 console.log(`✔ Creado games/${slug}/index.html`);
-console.log(`✔ Añadido "${titulo}" a games.js — edita allí su descripción, géneros y controles.`);
+console.log(`✔ Añadido "${titulo}" a games.js — edita allí su descripción y géneros.`);

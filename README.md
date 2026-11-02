@@ -8,7 +8,7 @@ Web estática que reúne todos los juegos que estamos creando. No necesita depen
 python3 -m http.server 8765
 ```
 
-Abre http://localhost:8765. (Abrir `index.html` con doble clic también funciona, pero algunos navegadores limitan los iframes con `file://`.)
+Abre http://localhost:8765.
 
 ## Añadir un juego
 
@@ -19,7 +19,7 @@ node nuevo-juego.mjs "Nombre del juego" --autor "Ana" --genero arcade,puzzle --e
 Esto crea `games/nombre-del-juego/index.html` desde `plantilla/` y añade su ficha a `games.js`. Luego:
 
 1. Programa el juego en su carpeta (puede tener sus propios archivos JS, imágenes, sonidos…).
-2. Ajusta su ficha en `games.js`: descripción, géneros, controles, estado, portada.
+2. Ajusta su ficha en `games.js`: descripción, géneros, estado, portada.
 
 ¿Ya tienes un juego hecho? Copia su carpeta a `games/<slug>/` (con un `index.html` dentro) y añade la entrada a mano en `games.js`, o usa el campo `url` si vive en otro sitio.
 
@@ -33,7 +33,7 @@ plantilla/index.html             punto de partida para juegos nuevos
 nuevo-juego.mjs                  script de alta
 ```
 
-Cada juego se puede enlazar directamente: `index.html#/jugar/<slug>`.
+Cada tarjeta abre la web del juego en una pestaña nueva.
 
 ## Publicarla
 

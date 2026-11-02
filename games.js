@@ -69,5 +69,16 @@ window.GAMES = [
     "emoji": "🕵️",
     "colores": ["#6c5ce7", "#d63031"],
     "url": "https://theimpostorgamer.vercel.app/"
+  },
+  {
+    "slug": "escape-3d",
+    "titulo": "Escape 3D",
+    "descripcion": "Escape rooms en 3D para el móvil: resuelve los enigmas del despacho del detective y del laboratorio abandonado contra el reloj y escala en el ranking.",
+    "estado": "beta",
+    "generos": ["escape room", "puzle", "3D"],
+    "autores": [],
+    "emoji": "🔐",
+    "colores": ["#00b894", "#2d3436"],
+    "url": "https://scaperooms.vercel.app/"
   }
 ];

@@ -69,7 +69,7 @@
           <button type="button" class="cover" data-play="${esc(g.slug)}" style="--c1:${esc(c1 || '#ff4fa3')};--c2:${esc(c2 || '#4fb3ff')}" aria-label="Jugar a ${esc(g.titulo)}">
             <span class="badge ${esc(g.estado)}">${esc(STATUS[g.estado] || g.estado)}</span>
             ${cover}
-            <span class="play">▶ JUGAR</span>
+            <span class="play">${g.iframe === false ? '↗ ABRIR' : '▶ JUGAR'}</span>
           </button>
           <div class="body">
             <h3>${esc(g.titulo)}</h3>
@@ -79,7 +79,7 @@
               ${(g.generos || []).map((t) => `<span>#${esc(t)}</span>`).join('')}
               ${g.fecha ? `<span>${esc(g.fecha)}</span>` : ''}
             </div>
-            <button type="button" class="btn-play" data-play="${esc(g.slug)}">▶ Jugar</button>
+            <button type="button" class="btn-play" data-play="${esc(g.slug)}">${g.iframe === false ? '↗ Jugar' : '▶ Jugar'}</button>
           </div>
         </article>`;
     }).join('');
@@ -97,6 +97,8 @@
     const g = games.find((x) => x.slug === slug);
     if (!g) return;
     const url = gameUrl(g);
+    // Hay webs que no se dejan meter en un iframe: esas van a pestaña nueva
+    if (g.iframe === false) return window.open(url, '_blank', 'noopener');
     $('player-title').textContent = g.titulo;
     $('player-controls').textContent = g.controles ? `Controles: ${g.controles}` : '';
     $('btn-tab').href = url;
@@ -140,6 +142,18 @@
   render();
 
   // Enlace directo: index.html#/jugar/<slug>
-  const m = location.hash.match(/^#\/jugar\/(.+)$/);
-  if (m) open(decodeURIComponent(m[1]));
+  function route() {
+    const m = location.hash.match(/^#\/jugar\/(.+)$/);
+    const linked = m && games.find((g) => g.slug === decodeURIComponent(m[1]));
+    if (!linked) return close();
+    // Abrir una pestaña sin clic lo bloquea el navegador; en ese caso se queda la portada
+    if (linked.iframe === false) {
+      close();
+      history.replaceState(null, '', location.pathname + location.search);
+    } else {
+      open(linked.slug);
+    }
+  }
+  addEventListener('hashchange', route);
+  route();
 })();

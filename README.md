@@ -1,6 +1,6 @@
-# Nos Hemos Viciado
+# Nos Viciamos
 
-Web estática (https://noshemosviciado.vercel.app) que reúne todos los juegos que estamos creando. No necesita dependencias ni compilación.
+Web estática (https://nosviciamos.vercel.app) que reúne todos los juegos que estamos creando. No necesita dependencias ni compilación.
 
 ## Verla en local
 

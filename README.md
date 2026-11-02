@@ -31,6 +31,10 @@ games.js                         registro de juegos (lista JSON)
 games/<slug>/index.html          cada juego
 plantilla/index.html             punto de partida para juegos nuevos
 nuevo-juego.mjs                  script de alta
+favicon.*, icon-*.png,           iconos de la web
+apple-touch-icon.png
+og-image.png                     miniatura al compartir el enlace (1200×630)
+site.webmanifest                 datos para "añadir a pantalla de inicio"
 ```
 
 Cada tarjeta abre la web del juego en una pestaña nueva.

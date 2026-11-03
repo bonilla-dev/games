@@ -35,42 +35,6 @@ Cada juego vive en su propia web; el portal solo los reúne y enlaza.
 
 Es HTML, CSS y JavaScript sin dependencias ni paso de compilación.
 
-## Añadir un juego
-
-Si el juego ya está publicado en otra web, añade su ficha a [`games.js`](games.js):
-
-```js
-{
-  "slug": "mi-juego",
-  "titulo": "Mi juego",
-  "descripcion": "Una o dos frases.",
-  "estado": "beta",                       // "desarrollo" | "beta" | "terminado"
-  "generos": ["fiesta", "multijugador"],
-  "autores": [],
-  "emoji": "🎲",
-  "colores": ["#6c5ce7", "#d63031"],      // degradado de la portada
-  "url": "https://mi-juego.vercel.app/"
-}
-```
-
-Los géneros `fiesta`, `multijugador`, `online`, `trivia`, `cartas` y `puzle` hacen que aparezca en el filtro correspondiente (se definen en `TIPOS`, en [`app.js`](app.js)).
-
-Para empezar un juego nuevo dentro de este repo:
-
-```bash
-node nuevo-juego.mjs "Nombre del juego" --autor "Ana" --genero arcade,puzle --estado desarrollo
-```
-
-Crea `games/<slug>/index.html` a partir de [`plantilla/`](plantilla/) y añade su ficha a `games.js`.
-
-## En local
-
-```bash
-python3 -m http.server 8765
-```
-
-Y abre http://localhost:8765.
-
 ## Estructura
 
 ```
@@ -83,7 +47,3 @@ apple-touch-icon.png
 og-image.png                     miniatura al compartir el enlace (1200×630)
 site.webmanifest                 datos para instalarla en el móvil
 ```
-
-## Despliegue
-
-Cada push a `main` se publica automáticamente en Vercel en [nosviciamos.vercel.app](https://nosviciamos.vercel.app).

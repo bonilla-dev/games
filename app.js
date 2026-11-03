@@ -11,6 +11,7 @@
   const TIPOS = [
     ['fiesta', '🎉 Fiesta'],
     ['multijugador', '📱 Multijugador'],
+    ['online', '🌐 Online'],
     ['trivia', '❓ Preguntas'],
     ['cartas', '🃏 Cartas'],
     ['puzle', '🧩 Puzles'],

@@ -53,7 +53,7 @@ window.GAMES = [
     "titulo": "Noche de Halloween",
     "descripcion": "Preguntas de Halloween para 2 a 10 jugadores: la sala en la tele o el portátil y cada jugador con su móvil de mando. Sin cuentas, solo un código de sala.",
     "estado": "beta",
-    "generos": ["fiesta", "trivia", "multijugador"],
+    "generos": ["fiesta", "trivia", "multijugador", "online"],
     "autores": [],
     "emoji": "🎃",
     "colores": ["#e17055", "#2d1b4e"],

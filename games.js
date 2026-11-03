@@ -80,5 +80,16 @@ window.GAMES = [
     "emoji": "🔐",
     "colores": ["#00b894", "#2d3436"],
     "url": "https://scaperooms.vercel.app/"
+  },
+  {
+    "slug": "cronicas-de-eldoria",
+    "titulo": "Crónicas de Eldoria",
+    "descripcion": "Aventura 3D de fantasía para móvil y PC: elige entre 5 héroes, explora el mundo abierto, completa misiones, mejora armas, entrena mascotas y recupera los Fragmentos del Alba.",
+    "estado": "beta",
+    "generos": ["aventura", "RPG", "3D"],
+    "autores": [],
+    "emoji": "⚔️",
+    "colores": ["#2e7d32", "#4a2c6b"],
+    "url": "https://eldoria3d.vercel.app/"
   }
 ];

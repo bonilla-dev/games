@@ -16,6 +16,7 @@
     ['cartas', '🃏 Cartas'],
     ['puzle', '🧩 Puzles'],
     ['aventura', '🗺️ Aventura'],
+    ['simulación', '🏗️ Simulación'],
   ];
 
   const state = { q: '', tipo: null };

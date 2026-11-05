@@ -31,7 +31,7 @@ Cada juego vive en su propia web; el portal solo los reúne y enlaza.
 ## La web
 
 - Buscador por nombre, descripción, género o autor.
-- Filtros por tipo: Fiesta, Multijugador, Online, Preguntas, Cartas, Puzles y Aventura.
+- Filtros por tipo: Fiesta, Multijugador, Online, Preguntas, Cartas, Puzles, Aventura y Simulación.
 - Juegos ordenados por nombre; cada tarjeta abre el juego en una pestaña nueva.
 - Lista para compartir: favicon, miniatura para WhatsApp/X/Discord e instalable en la pantalla de inicio.
 

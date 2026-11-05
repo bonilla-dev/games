@@ -17,6 +17,7 @@
 
 | Juego | De qué va | Tipo | Jugar |
 |---|---|---|---|
+| 🎬 **CinemaManager** | Dirige un cine de barrio en primera persona: taquilla, palomitas, proyector y averías. Para ordenador. | Simulación · Gestión | [cinemamanager.vercel.app](https://cinemamanager.vercel.app) |
 | ⚔️ **Crónicas de Eldoria** | Aventura 3D de fantasía para móvil y PC: 5 héroes, mundo abierto, misiones y mascotas. | Aventura · RPG · 3D | [eldoria3d.vercel.app](https://eldoria3d.vercel.app) |
 | 🕵️ **El Impostor** | Todos conocen la palabra secreta… menos el impostor. De 3 a 20 jugadores pasando el móvil, con 6 modos. | Fiesta · Multijugador | [theimpostorgamer.vercel.app](https://theimpostorgamer.vercel.app) |
 | 🔐 **Escape 3D** | Escape rooms en 3D para el móvil: enigmas contra el reloj y ranking. | Puzle · 3D | [scaperooms.vercel.app](https://scaperooms.vercel.app) |

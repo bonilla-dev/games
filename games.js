@@ -91,5 +91,16 @@ window.GAMES = [
     "emoji": "⚔️",
     "colores": ["#2e7d32", "#4a2c6b"],
     "url": "https://eldoria3d.vercel.app/"
+  },
+  {
+    "slug": "cinemamanager",
+    "titulo": "CinemaManager",
+    "descripcion": "Dirige tu propio cine de barrio en primera persona: vende entradas, atiende la tienda de palomitas, arregla el proyector y saca el cine adelante día a día.",
+    "estado": "beta",
+    "generos": ["simulación", "gestión", "3D"],
+    "autores": [],
+    "emoji": "🎬",
+    "colores": ["#c0392b", "#1e1e2f"],
+    "url": "https://cinemamanager.vercel.app/"
   }
 ];

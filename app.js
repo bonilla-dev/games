@@ -15,6 +15,7 @@
     ['trivia', '❓ Preguntas'],
     ['cartas', '🃏 Cartas'],
     ['puzle', '🧩 Puzles'],
+    ['aventura', '🗺️ Aventura'],
   ];
 
   const state = { q: '', tipo: null };

@@ -171,6 +171,48 @@ h1 {
 
 .foot { color: var(--muted); font-size: 13px; padding: 56px 0 40px; }
 
+/* Instalar y actualizar */
+.btn-install {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font: 600 14px Inter, sans-serif;
+  cursor: pointer;
+}
+.btn-install:hover { background: var(--accent); color: #1a1400; }
+.btn-install[hidden], .toast[hidden] { display: none; }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 32px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 12px 12px 16px;
+  box-shadow: 0 10px 30px #0008;
+  z-index: 10;
+}
+.toast button {
+  background: var(--accent);
+  color: #1a1400;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font: 700 14px Inter, sans-serif;
+  cursor: pointer;
+  flex: none;
+}
+
 @media (max-width: 600px) {
   .hero { padding: 48px 0 28px; }
 }

@@ -97,6 +97,30 @@
     renderGrid();
   });
 
+  // App instalable y aviso de versión nueva
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+    navigator.serviceWorker.addEventListener('message', (e) => {
+      if (e.data?.type === 'update') $('update').hidden = false;
+    });
+  }
+  $('update-btn').addEventListener('click', () => location.reload());
+
+  let installPrompt = null;
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    installPrompt = e;
+    $('install').hidden = false;
+  });
+  $('install').addEventListener('click', async () => {
+    if (!installPrompt) return;
+    installPrompt.prompt();
+    await installPrompt.userChoice;
+    installPrompt = null;
+    $('install').hidden = true;
+  });
+  window.addEventListener('appinstalled', () => { $('install').hidden = true; });
+
   renderStats();
   renderTipos();
   renderGrid();

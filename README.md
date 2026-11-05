@@ -33,7 +33,8 @@ Cada juego vive en su propia web; el portal solo los reúne y enlaza.
 - Buscador por nombre, descripción, género o autor.
 - Filtros por tipo: Fiesta, Multijugador, Online, Preguntas, Cartas, Puzles, Aventura y Simulación.
 - Juegos ordenados por nombre; cada tarjeta abre el juego en una pestaña nueva.
-- Lista para compartir: favicon, miniatura para WhatsApp/X/Discord e instalable en la pantalla de inicio.
+- Lista para compartir: favicon y miniatura para WhatsApp/X/Discord.
+- App instalable (PWA) que funciona sin conexión y avisa cuando hay una versión nueva.
 
 Es HTML, CSS y JavaScript sin dependencias ni paso de compilación.
 
@@ -48,4 +49,5 @@ favicon.*, icon-*.png,           iconos
 apple-touch-icon.png
 og-image.png                     miniatura al compartir el enlace (1200×630)
 site.webmanifest                 datos para instalarla en el móvil
+sw.js                            service worker: caché, sin conexión y aviso de actualización
 ```

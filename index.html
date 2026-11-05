@@ -44,6 +44,7 @@
       <h1>Nos Viciamos</h1>
       <p class="lead">Todo lo que estamos creando, en un solo sitio. Elige uno y dale a jugar.</p>
       <div class="stats" id="stats"></div>
+      <button type="button" class="btn-install" id="install" hidden>⬇ Instalar la app</button>
     </div>
   </header>
 
@@ -58,6 +59,11 @@
   </main>
 
   <footer class="wrap foot">Hecho con cariño y muchas partidas de prueba.</footer>
+
+  <div class="toast" id="update" role="status" hidden>
+    <span>Hay una versión nueva de la web.</span>
+    <button type="button" id="update-btn">Actualizar</button>
+  </div>
 
   <script src="games.js"></script>
   <script src="app.js"></script>
